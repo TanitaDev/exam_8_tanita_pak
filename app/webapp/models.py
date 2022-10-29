@@ -33,11 +33,11 @@ class Product(models.Model):
         verbose_name='Описание товара'
     )
     image = models.ImageField(
-        upload_to='media/images',
+        upload_to='uploads/images',
         verbose_name='Изображение',
         null=True,
         blank=True,
-        default='media/images/empty.jpg'
+        default='uploads/images/empty.jpg'
     )
 
     def get_avg_rating(self):

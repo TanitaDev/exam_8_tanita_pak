@@ -30,6 +30,7 @@
                     <input type="submit" value="Выход">
                 </form>
             </li>
+            <li><a href="{% url 'profile' user.pk %}">Профиль</a></li>
             {% else %}
             <li><a href="{% url 'login' %}">Вход</a></li>
             <li><a href="{% url 'register' %}">Регистрация</a></li>
