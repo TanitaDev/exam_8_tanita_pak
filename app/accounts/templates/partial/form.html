@@ -8,11 +8,11 @@
     {% endfor %}
 
     {% for field in form %}
-    {% include 'partial/form_field.html' %}
+    {{field}}
     {% endfor %}
 
     {% if not fields_only %}
     <br/>
-    <input type="submit" value="{{ button_text|default:" Submit" }}"/>
+    <input type="submit" value="Submit"/>
 </form>
 {% endif %}
