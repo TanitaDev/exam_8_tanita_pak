@@ -6,6 +6,7 @@ from django.contrib.auth import authenticate, login, logout, get_user_model
 from django.shortcuts import redirect
 
 from accounts.forms import LoginForm, CustomUserCreationForm, ProfileChangeForm, UserChangeForm, PasswordChangeForm
+from accounts.models import Profile
 
 
 class LoginView(TemplateView):
