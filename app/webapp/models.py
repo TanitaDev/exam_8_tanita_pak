@@ -1,3 +1,5 @@
+from django.contrib.auth.models import User
+from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db import models
 
 
@@ -28,6 +30,31 @@ class Product(models.Model):
         blank=True,
         verbose_name='Описание товара'
     )
-    image = models.ImageField(upload_to='images', null=True)
+    image = models.ImageField(
+        upload_to='images',
+        null=True
+    )
 
 
+class Review(models.Model):
+    author = models.ForeignKey(
+        to=User, related_name='review_author',
+        verbose_name='Автор',
+        null=False, on_delete=models.CASCADE
+    )
+    product = models.ForeignKey(
+        to=Product,
+        related_name='review_product',
+        verbose_name='Товар',
+        null=False,
+        on_delete=models.CASCADE
+    )
+    text = models.TextField(
+        max_length=300,
+        verbose_name='Текст отзыва',
+        null=False, blank=True
+    )
+    rate = models.FloatField(
+        null=False,
+        validators=[MinValueValidator(0.0), MaxValueValidator(5.0)]
+    )
