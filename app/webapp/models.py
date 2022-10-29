@@ -39,6 +39,14 @@ class Product(models.Model):
         default='media/images/empty.jpg'
     )
 
+    def get_avg_rating(self):
+        reviews = Review.objects.filter(product=self)
+        count = len(reviews)
+        sum = 0
+        for rvw in reviews:
+            sum += rvw.rate
+        return (sum / count)
+
     def __str__(self):
         return f'{self.name} {self.category}'
 
@@ -63,8 +71,10 @@ class Review(models.Model):
     )
     rate = models.FloatField(
         null=False,
-        validators=[MinValueValidator(0.0), MaxValueValidator(5.0)]
+        validators=[MinValueValidator(0.0), MaxValueValidator(5.0)],
+        verbose_name='Оценка'
     )
+
 
     def __str__(self):
         return f'{self.author} {self.product}'

@@ -23,8 +23,10 @@
             <p>Отзыв: {{ review.text }}</p>
         </li>
         {% endfor %}
+        <p>Рейтинг товара: <b>{{ product.get_avg_rating }}</b></p>
         {% else %}
         <p>Нет отзывов</p>
+        <p>Рейтинг товара: <b>0</b></p>
         {% endif %}
     </ul>
 </div>

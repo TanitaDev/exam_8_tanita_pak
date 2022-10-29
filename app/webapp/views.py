@@ -16,6 +16,14 @@ class ProductView(DetailView):
     template_name = 'product_detail.html'
     model = Product
 
+    def get_avg_rating(self):
+        reviews = Review.objects.filter(product=self)
+        count = len(reviews)
+        sum = 0
+        for rvw in reviews:
+            sum += rvw.rating
+        return (sum / count)
+
 
 class ProductCreate(CreateView):
     template_name = 'product_create.html'

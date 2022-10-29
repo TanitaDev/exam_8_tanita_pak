@@ -8,7 +8,7 @@ class ProductAdmin(admin.ModelAdmin):
 
 
 class ReviewAdmin(admin.ModelAdmin):
-    list_display = ['id', 'author', 'product', 'rate']
+    list_display = ['id', 'author', 'product', 'rate', 'text']
 
 
 admin.site.register(Product, ProductAdmin)
