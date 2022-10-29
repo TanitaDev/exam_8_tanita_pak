@@ -13,5 +13,19 @@
     <p>Категория: {{ product.get_category_display }}</p>
     <a href="{% url 'product_update' product.pk %}">Редактировать товар</a>
     <a href="{% url 'product_delete' product.pk %}">Удалить товар</a>
+    <ul>
+        <b>Отзывы о товаре</b>
+        {% if  product.review_product.all%}
+        {% for review in product.review_product.all  %}
+        <li>
+            <p>Автор: {{ review.author }}</p>
+            <p>Оценка: {{ review.rate }}</p>
+            <p>Отзыв: {{ review.text }}</p>
+        </li>
+        {% endfor %}
+        {% else %}
+        <p>Нет отзывов</p>
+        {% endif %}
+    </ul>
 </div>
 {% endblock %}

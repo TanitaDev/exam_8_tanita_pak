@@ -2,8 +2,8 @@ from django.shortcuts import render
 from django.urls import reverse, reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, DeleteView, UpdateView
 
-from webapp.forms import ProductForm
-from webapp.models import Product
+from webapp.forms import ProductForm, ReviewForm
+from webapp.models import Product, Review
 
 
 class IndexView(ListView):
@@ -41,3 +41,12 @@ class ProductUpdate(UpdateView):
 
     def get_success_url(self):
         return reverse('product_view', kwargs={'pk': self.object.pk})
+
+
+class ReviewCreate(CreateView):
+    template_name = 'review_create.html'
+    model = Review
+    form_class = ReviewForm
+
+    def get_success_url(self):
+        return reverse('index')

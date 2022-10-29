@@ -26,3 +26,12 @@ class ProductForm(forms.ModelForm):
         if Product.objects.filter(name=name).exists():
             raise ValidationError('уже есть')
         return name
+
+
+class ReviewForm(forms.ModelForm):
+    class Meta:
+        model = Review
+        fields = ['author', 'product', 'text', 'rate']
+        widgets = {
+            'text': forms.Textarea(attrs={'cols': 73, 'rows': 5, 'class': ''})
+        }
