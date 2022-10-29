@@ -19,6 +19,7 @@ class Product(models.Model):
     )
     category = models.CharField(
         max_length=2,
+        verbose_name='Категория',
         null=False,
         blank=False,
         choices=Category.choices,
@@ -31,9 +32,15 @@ class Product(models.Model):
         verbose_name='Описание товара'
     )
     image = models.ImageField(
-        upload_to='images',
-        null=True
+        upload_to='media/images',
+        verbose_name='Изображение',
+        null=True,
+        blank=True,
+        default='media/images/empty.jpg'
     )
+
+    def __str__(self):
+        return f'{self.name} {self.category}'
 
 
 class Review(models.Model):
@@ -58,3 +65,6 @@ class Review(models.Model):
         null=False,
         validators=[MinValueValidator(0.0), MaxValueValidator(5.0)]
     )
+
+    def __str__(self):
+        return f'{self.author} {self.product}'

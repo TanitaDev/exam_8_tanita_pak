@@ -4,7 +4,7 @@ from webapp.models import Product, Review
 
 
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ['id', 'name', 'category']
+    list_display = ['id', 'name', 'category', 'image']
 
 
 class ReviewAdmin(admin.ModelAdmin):

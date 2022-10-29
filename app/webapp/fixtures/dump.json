@@ -1,0 +1,80 @@
+[
+{
+  "model": "webapp.product",
+  "pk": 1,
+  "fields": {
+    "name": "Samsung galaxy s22 ultra",
+    "category": "SM",
+    "description": "good good",
+    "image": "media/images/s22.jpeg"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 2,
+  "fields": {
+    "name": "Asus ROG Strix G17",
+    "category": "CP",
+    "description": "nice nice",
+    "image": "media/images/asus.png"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 3,
+  "fields": {
+    "name": "SALOMON Highland Men Ski Jacket",
+    "category": "CL",
+    "description": "warm warm",
+    "image": "media/images/jacket.jpg"
+  }
+},
+{
+  "model": "webapp.review",
+  "pk": 1,
+  "fields": {
+    "author": 1,
+    "product": 1,
+    "text": "samsung is nice",
+    "rate": 5.0
+  }
+},
+{
+  "model": "webapp.review",
+  "pk": 2,
+  "fields": {
+    "author": 1,
+    "product": 2,
+    "text": "Asus is great",
+    "rate": 5.0
+  }
+},
+{
+  "model": "webapp.review",
+  "pk": 3,
+  "fields": {
+    "author": 1,
+    "product": 3,
+    "text": "Jacket is pretty good",
+    "rate": 4.0
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$IwvT7fXoaOLAdqgLF1RnES$HgQsdQYk6JsigmzHJFyRYmk0QE1N3f68jlsP6AP0ZUs=",
+    "last_login": "2022-10-29T07:24:30.953Z",
+    "is_superuser": true,
+    "username": "root",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2022-10-29T07:23:37.869Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
