@@ -24,7 +24,7 @@
             {% endif %}
             <li><a href="{% url 'review_create' %}">Добавить отзыв</a></li>
             <li class="auth">
-                <p>{{ user.username }}</p>
+                <p>Пользователь: <b>{{ user.username }}</b></p>
                 <form action="{% url 'logout' %}" method="post">
                     {% csrf_token %}
                     <input type="submit" value="Выход">

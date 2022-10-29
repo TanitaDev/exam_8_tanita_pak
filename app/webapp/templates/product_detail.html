@@ -7,19 +7,20 @@
 {% block title %}{{ product.name }}{% endblock %}
 {% block content %}
 <div class="product_detail_item">
-    <h2>{{ product.name }}</h2>
+    <div>
+        <h2>{{ product.name }}</h2>
     <img src="{{product.image.url}}">
     <p>Описание: {{ product.description }}</p>
     <p>Категория: {{ product.get_category_display }}</p>
     {% if user.is_authenticated %}
     {% if perms.webapp.change_article %}
-    <a href="{% url 'product_update' product.pk %}">Редактировать товар</a>
+    <a class="change_product_link" href="{% url 'product_update' product.pk %}">Редактировать товар</a>
     {% endif %}
-    {% if perms.webapp.dekete_article %}
-    <a href="{% url 'product_delete' product.pk %}">Удалить товар</a>
+    {% if perms.webapp.delete_article %}
+    <a  class="change_product_link"  href="{% url 'product_delete' product.pk %}">Удалить товар</a>
     {% endif %}
     {% endif %}
-    <ul>
+    <ul class="review_block">
         <b>Отзывы о товаре</b>
         {% if  product.review_product.all%}
         {% for review in product.review_product.all  %}
@@ -27,6 +28,7 @@
             <p>Автор: {{ review.author }}</p>
             <p>Оценка: {{ review.rate }}</p>
             <p>Отзыв: {{ review.text }}</p>
+            <hr>
         </li>
         {% endfor %}
         <p>Рейтинг товара: <b>{{ product.get_avg_rating }}</b></p>
@@ -35,5 +37,6 @@
         <p>Рейтинг товара: <b>0</b></p>
         {% endif %}
     </ul>
+    </div>
 </div>
 {% endblock %}

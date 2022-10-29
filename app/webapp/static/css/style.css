@@ -3,6 +3,10 @@ body{
     margin-top: 60px;
 }
 
+li {
+    list-style-type:none;
+}
+
 p {
     margin: 7px 0px;
 }
@@ -44,7 +48,7 @@ input::placeholder {
 }
 
 .center-column{
-    width: 800px;
+    width: 1000px;
     margin: 90px auto 20px auto;
     background-color: #f2f2f1;
     border-radius: 10px;
@@ -204,7 +208,6 @@ form.text-center .btn-primary {
 
 .wrapper {
     margin: 0 auto;
-    padding: 0 20%;
 }
 
 .auth {
@@ -254,6 +257,60 @@ form.text-center .btn-primary {
     margin-bottom: 10px;
 }
 
+.product_item b {
+    display: inline-block;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    font-size: 18px;
+}
+
 .product_detail_item img{
     max-width: 300px;
+}
+
+.product_detail_item {
+    display: flex;
+}
+
+.review_block {
+    margin-top: 30px;
+}
+
+.review_block b {
+    margin-bottom: 10px;
+    display: inline-block;
+    font-size: 19px;
+}
+
+.review_block li p {
+    margin: 0px 0px 5px 0px;
+}
+
+.review_block li {
+    margin-bottom: 20px;
+}
+
+.change_product_link {
+    display: inline-block;
+    color: black;
+    font-size: 18px;
+    margin: 10px 10px 0px 0px;
+}
+
+.delete_btn {
+    display: flex;
+    justify-content: center;
+    color: #d92121;
+    font-size: 18px;
+}
+
+.auth p {
+    margin: 0px 10px 0px 0px;
+    font-size: 17px;
+}
+
+.auth input {
+    border: none;
+    height: 40px;
+    padding: 5px 20px;
 }
