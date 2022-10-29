@@ -1,4 +1,4 @@
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.shortcuts import render
 from django.urls import reverse, reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, DeleteView, UpdateView
@@ -26,36 +26,44 @@ class ProductView(DetailView):
         return (sum / count)
 
 
-class ProductCreate(LoginRequiredMixin, CreateView):
+class ProductCreate(PermissionRequiredMixin, CreateView):
     template_name = 'product_create.html'
     model = Product
     form_class = ProductForm
+
+    permission_required = 'webapp.add_product'
 
     def get_success_url(self):
         return reverse('product_view', kwargs={'pk': self.object.pk})
 
 
-class ProductDelete(LoginRequiredMixin, DeleteView):
+class ProductDelete(PermissionRequiredMixin, DeleteView):
     template_name = 'product_delete.html'
     model = Product
     context_object_name = 'product'
     success_url = reverse_lazy('index')
 
+    permission_required = 'webapp.delete_product'
 
-class ProductUpdate(LoginRequiredMixin, UpdateView):
+
+class ProductUpdate(PermissionRequiredMixin, UpdateView):
     template_name = 'product_update.html'
     model = Product
     form_class = ProductForm
     context_object_name = 'product'
 
+    permission_required = 'webapp.change_product'
+
     def get_success_url(self):
         return reverse('product_view', kwargs={'pk': self.object.pk})
 
 
-class ReviewCreate(LoginRequiredMixin, CreateView):
+class ReviewCreate(PermissionRequiredMixin, CreateView):
     template_name = 'review_create.html'
     model = Review
     form_class = ReviewForm
+
+    permission_required = 'webapp.change_review'
 
     def get_success_url(self):
         return reverse('index')

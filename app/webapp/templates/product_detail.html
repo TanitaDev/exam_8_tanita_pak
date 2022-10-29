@@ -12,8 +12,12 @@
     <p>Описание: {{ product.description }}</p>
     <p>Категория: {{ product.get_category_display }}</p>
     {% if user.is_authenticated %}
+    {% if perms.webapp.change_article %}
     <a href="{% url 'product_update' product.pk %}">Редактировать товар</a>
+    {% endif %}
+    {% if perms.webapp.dekete_article %}
     <a href="{% url 'product_delete' product.pk %}">Удалить товар</a>
+    {% endif %}
     {% endif %}
     <ul>
         <b>Отзывы о товаре</b>

@@ -19,8 +19,10 @@
             {% endblock %}
 
             {% if user.is_authenticated %}
+            {% if perms.webapp.add_article %}
             <li><a href="{% url 'product_create' %}">Добавить товар</a></li>
             <li><a href="{% url 'review_create' %}">Добавить отзыв</a></li>
+            {% endif %}
             <li class="auth">
                 <p>{{ user.username }}</p>
                 <form action="{% url 'logout' %}" method="post">
