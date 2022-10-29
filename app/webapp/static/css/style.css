@@ -314,3 +314,13 @@ form.text-center .btn-primary {
     height: 40px;
     padding: 5px 20px;
 }
+
+.create_form p{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.create_form p label {
+    margin-bottom: 5px;
+}

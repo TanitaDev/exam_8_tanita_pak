@@ -4,7 +4,7 @@
 {% endblock %}
 {% block title %}Добавить товар{% endblock %}
 {% block content %}
-   <form action="{% url 'review_create' %}" method="post">
+   <form class="create_form" action="{% url 'review_create' %}" method="post">
     {% include 'partial/review_form.html'  with button_text='Добавить' %}
 </form>
 {% endblock %}
