@@ -7,11 +7,6 @@ from .models import *
 
 
 class ProductForm(forms.ModelForm):
-    name = forms.CharField(
-        max_length=200, label='Заголовок',
-        validators=(MinLengthValidator(limit_value=2, message='dsad'),)
-    )
-
     class Meta:
         model = Product
         fields = ['name', 'category', 'description', 'image']
@@ -22,9 +17,7 @@ class ProductForm(forms.ModelForm):
     def clean_name(self):
         name = self.cleaned_data['name']
         if len(name) < 2:
-            raise ValidationError('Длина маленькая')
-        if Product.objects.filter(name=name).exists():
-            raise ValidationError('уже есть')
+            raise ValidationError('Слишком коротко')
         return name
 
 

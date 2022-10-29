@@ -1,10 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+{% extends "base.html" %}
+{% block title %}Delete Article{% endblock %}
+{% block menu %}
+{% endblock %}
+{% block content %}
+    <h1 style="color: #000000;">Are you sure want to delete article "{{ product.name }}"?</h1>
+      <form method="POST" action="{% url 'review_delete' review.pk %}" class="text-center">
+        {% csrf_token %}
+        <p><input class="btn" type="submit" value="Confirm"></p>
+        <p><a class="delete_btn" href="{% url 'index' %}">Cancel</a></p>
+    </form>
+{% endblock %}
