@@ -32,6 +32,7 @@ class ReviewForm(forms.ModelForm):
     class Meta:
         model = Review
         fields = ['author', 'product', 'text', 'rate']
+        exclude = ['author']
         widgets = {
             'text': forms.Textarea(attrs={'cols': 73, 'rows': 5, 'class': ''})
         }

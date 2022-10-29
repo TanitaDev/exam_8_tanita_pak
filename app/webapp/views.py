@@ -58,12 +58,14 @@ class ProductUpdate(PermissionRequiredMixin, UpdateView):
         return reverse('product_view', kwargs={'pk': self.object.pk})
 
 
-class ReviewCreate(PermissionRequiredMixin, CreateView):
+class ReviewCreate(LoginRequiredMixin, CreateView):
     template_name = 'review_create.html'
     model = Review
     form_class = ReviewForm
 
-    permission_required = 'webapp.change_review'
-
     def get_success_url(self):
         return reverse('index')
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
