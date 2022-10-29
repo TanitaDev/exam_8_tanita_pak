@@ -7,9 +7,7 @@
     <p class="error">{{ error }}</p>
     {% endfor %}
 
-    {% for field in form %}
-    {{field}}
-    {% endfor %}
+    {{ form.as_p }}
 
     {% if not fields_only %}
     <br/>
