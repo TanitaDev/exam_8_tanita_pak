@@ -21,12 +21,42 @@
 },
 {
   "model": "webapp.product",
-  "pk": 3,
+  "pk": 4,
   "fields": {
-    "name": "SALOMON Highland Men Ski Jacket",
+    "name": "SALOMON Highland Men Ski Jackettt",
     "category": "CL",
-    "description": "warm warm",
-    "image": "media/images/jacket.jpg"
+    "description": "jacket jacket",
+    "image": "media/images/jacket_0vTfgVN.jpg"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 5,
+  "fields": {
+    "name": "Какой-то",
+    "category": "AN",
+    "description": "qweqweqweqw",
+    "image": "media/images/empty.jpg"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 7,
+  "fields": {
+    "name": "321",
+    "category": "CP",
+    "description": "3123",
+    "image": "media/images/empty.jpg"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 8,
+  "fields": {
+    "name": "eqw",
+    "category": "AN",
+    "description": "ewq",
+    "image": "media/images/empty.jpg"
   }
 },
 {
@@ -51,12 +81,52 @@
 },
 {
   "model": "webapp.review",
-  "pk": 3,
+  "pk": 4,
   "fields": {
     "author": 1,
-    "product": 3,
-    "text": "Jacket is pretty good",
+    "product": 4,
+    "text": "wow wow",
     "rate": 4.0
+  }
+},
+{
+  "model": "webapp.review",
+  "pk": 5,
+  "fields": {
+    "author": 1,
+    "product": 1,
+    "text": "qwewqewq",
+    "rate": 5.0
+  }
+},
+{
+  "model": "webapp.review",
+  "pk": 6,
+  "fields": {
+    "author": 1,
+    "product": 1,
+    "text": "qwewqewq",
+    "rate": 5.0
+  }
+},
+{
+  "model": "webapp.review",
+  "pk": 7,
+  "fields": {
+    "author": 1,
+    "product": 1,
+    "text": "ura ura",
+    "rate": 3.0
+  }
+},
+{
+  "model": "webapp.review",
+  "pk": 8,
+  "fields": {
+    "author": 2,
+    "product": 2,
+    "text": "woww",
+    "rate": 5.0
   }
 },
 {
@@ -64,7 +134,7 @@
   "pk": 1,
   "fields": {
     "password": "pbkdf2_sha256$260000$IwvT7fXoaOLAdqgLF1RnES$HgQsdQYk6JsigmzHJFyRYmk0QE1N3f68jlsP6AP0ZUs=",
-    "last_login": "2022-10-29T07:24:30.953Z",
+    "last_login": "2022-10-29T11:11:12.167Z",
     "is_superuser": true,
     "username": "root",
     "first_name": "",
@@ -73,6 +143,24 @@
     "is_staff": true,
     "is_active": true,
     "date_joined": "2022-10-29T07:23:37.869Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$Jqg0F2izdPXlo1QX7WzGmD$8PwXYPJers84VNlwYrlNPfKjymJ1GAQuL9jr3s/3Dpc=",
+    "last_login": "2022-10-29T11:14:41.114Z",
+    "is_superuser": false,
+    "username": "Maq",
+    "first_name": "Mm",
+    "last_name": "Kh",
+    "email": "man@mail.ru",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2022-10-29T11:00:27.602Z",
     "groups": [],
     "user_permissions": []
   }
