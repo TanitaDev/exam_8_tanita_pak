@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block menu %}
+{% if user.is_authenticated %}
+{% endif %}
+{% endblock %}
+{% block title %}{{ product.name }}{% endblock %}
+{% block content %}
+<div class="product_detail_item">
+    <h2>{{ product.name }}</h2>
+    <img src="{{product.image.url}}">
+    <p>Описание: {{ product.description }}</p>
+    <p>Категория: {{ product.get_category_display }}</p>
+    <a href="{% url 'product_update' product.pk %}">Редактировать товар</a>
+    <a href="{% url 'product_delete' product.pk %}">Удалить товар</a>
+</div>
+{% endblock %}

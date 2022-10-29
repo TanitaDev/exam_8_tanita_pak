@@ -16,30 +16,23 @@
         <ul class="menu">
             <li><a href="{% url 'index' %}">На главную</a></li>
             {% block menu %}
-            <li><a href="{% url 'article_update' article.pk %}">Отредактировать</a></li>
-            <li><a href="{% url 'article_delete' article.pk %}">Удалить</a></li>
             {% endblock %}
-            {% if user.is_authenticated %}
+            <li><a href="{% url 'product_create' %}">Добавить товар</a></li>
             <li class="auth">
                 <p>{{ user.username }}</p>
-                <form class="login_form" action="{% url 'logout' %}" method="post">
+                <form class="login_form" action="" method="post">
                     {% csrf_token %}
                     <input class="logout_btn" type="submit" value="Выход">
                 </form>
             </li>
-             <li><a href="{% url 'profile' user.pk %}">Профиль</a></li>
-            {% else %}
-            <li><a href="{% url 'login' %}">Вход</a></li>
-            <li><a href="{% url 'register' %}">Регистрация</a></li>
-            {% endif %}
+             <li><a href="">Профиль</a></li>
+            <li><a href="">Вход</a></li>
+            <li><a href="">Регистрация</a></li>
         </ul>
     </div>
 </nav>
 <div class="wrapper">
     <div class="center-column">
-        <div class="main_header">
-            <h1>Articles</h1>
-        </div>
         <div class="main_body">
             {% block content %}
             {% endblock %}

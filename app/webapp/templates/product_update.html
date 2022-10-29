@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}{% endblock %}
+{% block content %}
+<h1>Редактировать товар</h1>
+<form method="POST" action="{% url 'product_update' product.pk %}">
+    {% csrf_token %}
+    {% include 'partial/product_form.html'  with button_text='Редактировать' %}
+</form>
+{% endblock %}

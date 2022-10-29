@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block menu %}
+{% endblock %}
+{% block title %}Добавить товар{% endblock %}
+{% block content %}
+   <form action="{% url 'product_create' %}" method="post">
+    {% include 'partial/product_form.html'  with button_text='Добавить' %}
+</form>
+{% endblock %}

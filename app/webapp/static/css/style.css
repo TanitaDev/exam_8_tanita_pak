@@ -236,3 +236,24 @@ form.text-center .btn-primary {
     padding: 0px 0px 0px 17px;
     color: #000000;
 }
+
+.product_body {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.product_item {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 20px;
+}
+
+.product_item img {
+    max-width: 200px;
+    margin-bottom: 10px;
+}
+
+.product_detail_item img{
+    max-width: 300px;
+}
