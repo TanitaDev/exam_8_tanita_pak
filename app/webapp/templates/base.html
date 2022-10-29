@@ -17,18 +17,19 @@
             <li><a href="{% url 'index' %}">На главную</a></li>
             {% block menu %}
             {% endblock %}
+            {% if user.is_authenticated %}
             <li><a href="{% url 'product_create' %}">Добавить товар</a></li>
             <li><a href="{% url 'review_create' %}">Добавить отзыв</a></li>
-<!--            <li class="auth">-->
-<!--                <p>{{ user.username }}</p>-->
-<!--                <form class="login_form" action="" method="post">-->
-<!--                    {% csrf_token %}-->
-<!--                    <input class="logout_btn" type="submit" value="Выход">-->
-<!--                </form>-->
-<!--            </li>-->
-<!--             <li><a href="">Профиль</a></li>-->
-<!--            <li><a href="">Вход</a></li>-->
-<!--            <li><a href="">Регистрация</a></li>-->
+            <li class="auth">
+                <p>{{ user.username }}</p>
+                <form action="{% url 'logout' %}" method="post">
+                    {% csrf_token %}
+                    <input type="submit" value="Выход">
+                </form>
+            </li>
+            {% else %}
+            <li><a href="{% url 'login' %}">Вход</a></li>
+            {% endif %}
         </ul>
     </div>
 </nav>
